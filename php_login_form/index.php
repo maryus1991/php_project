@@ -34,16 +34,19 @@ require_once('./config/loader.php')
     </div>
     <div class="form-container sign-in">
         <!--          log in form -->
-      <form>
+      <form method="post" action="actions/sign_in.php">
         <h1>Sign In</h1>
- <br>
+            <br>
 
-            <span>or use your email/password</span>
-            <input type="text" placeholder="Mobile / Username / Password">
-            <input type="password" placeholder="Password">
+            <span>use your Mobile / Username / email/ password</span>
+            <?php if (isset($_GET['noresult']) == 1 ){
+                print '<span style="color: darkred">Not Regesterd or Not Correct Information</span>';
+            } ?>
+            <input type="text" name="login_emu" placeholder="Mobile / Username / email">
+            <input type="password" name="loginpass" placeholder="Password">
             <a href="#">Forget your Password?</a>
             <div style="display: inline;">
-                <button>Sign In</button>
+                <button type="submit" name="signin" >Sign In</button>
                 <a style="margin-left: 15px" href="otp.php">Send OTP</a>        
             </div>
       </form>
