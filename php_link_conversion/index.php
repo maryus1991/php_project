@@ -118,4 +118,9 @@ if(isset($_POST['submit'])){
     header("Location:$custom_link");
 }?>
 </body>
+<br>
+<br>
+<footer>
+    <a href="contact.php">تماس با ما</a>
+</footer>
 </html>
